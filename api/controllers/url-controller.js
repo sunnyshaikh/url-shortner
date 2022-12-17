@@ -22,7 +22,7 @@ const shortUrl = async (req, res) => {
     const urlExists = await ShortUrl.findOne({ full: longUrl })
     if (urlExists)
       return res.status(400).json("Long url already exists")
-    const shortUrl = shortid.generate()
+    const shortUrl = req.hostname + '/' + shortid.generate()
     const newUrl = new ShortUrl({
       full: longUrl,
       short: shortUrl
