@@ -19,7 +19,7 @@ app.get("/:code", async (req, res) => {
   const code = req.params.code
 
   try {
-    const urlData = await ShortUrl.findOne({ short: code })
+    const urlData = await ShortUrl.findOne({ code })
     if (!urlData)
       return res.status(400).json("Url not found")
 

@@ -22,10 +22,13 @@ const shortUrl = async (req, res) => {
     const urlExists = await ShortUrl.findOne({ full: longUrl })
     if (urlExists)
       return res.status(400).json("Long url already exists")
-    const shortUrl = "https://" + req.hostname + '/' + shortid.generate()
+
+    const code = shortid.generate()
+    const shortUrl = `https://${req.hostname}/${code}`
     const newUrl = new ShortUrl({
       full: longUrl,
-      short: shortUrl
+      short: shortUrl,
+      code
     })
 
     await newUrl.save()
