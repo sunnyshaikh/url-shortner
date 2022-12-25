@@ -16,8 +16,8 @@ const Main = () => {
   // fetch all
   const fetchAllUrls = async () => {
     try {
-      // const res = await axios.get("https://url-shortner-jet.vercel.app/api/shortner")
-      const res = await axios.get("/api/shortner")
+      const res = await axios.get("https://url-shortner-jet.vercel.app/api/shortner")
+      // const res = await axios.get("/api/shortner")
       setUrls(res.data)
     }
     catch (error) {
@@ -28,8 +28,8 @@ const Main = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      // const res = await axios.post("https://url-shortner-jet.vercel.app/api/shortner", { urlInput })
-      const res = await axios.post("/api/shortner", { urlInput })
+      const res = await axios.post("https://url-shortner-jet.vercel.app/api/shortner", { urlInput })
+      // const res = await axios.post("/api/shortner", { urlInput })
       setError(res.data)
       setUrlInput("")
 
