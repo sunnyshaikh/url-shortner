@@ -4,9 +4,9 @@ const shortid = require("shortid")
 
 const fetchAll = async (req, res) => {
   try {
-    // const urlData = await ShortUrl.find()
-    const cookieData = req.cookies.urls
-    const urlData = cookieData ? JSON.parse(cookieData) : []
+    const urlData = await ShortUrl.find()
+    // const cookieData = req.cookies.urls
+    // const urlData = cookieData ? JSON.parse(cookieData) : []
     res.status(200).json(urlData)
   }
   catch (err) {
