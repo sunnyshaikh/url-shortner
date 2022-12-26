@@ -53,7 +53,7 @@ const Main = () => {
       {error && <ToastContainer />}
       <div className="page-header">
         <h1 className="page-title">Url Shortner</h1>
-        <p className="page-desc">Get you url's short, crisp and smarter.</p>
+        <p className="page-desc">Get your long urls short and smarter.</p>
       </div>
       <form onSubmit={handleSubmit}>
         <input
